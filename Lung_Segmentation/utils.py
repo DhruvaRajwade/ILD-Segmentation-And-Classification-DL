@@ -52,7 +52,7 @@ np.save('path/input_labels', original_labels)
 # For data intensive images, use a batch_size >4 for the data_loader, and average the below function outputs, else: batch_size=1
 
 def mean_std(loader):
-  images, lebels = next(iter(loader))
+  images, labels = next(iter(loader))
   # shape of images = [b,c,w,h]
   mean, std = images.mean([0,2,3]), images.std([0,2,3])
   return mean, std
