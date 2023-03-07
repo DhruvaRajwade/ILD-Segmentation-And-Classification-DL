@@ -1,3 +1,7 @@
+#Ref: https://github.com/sohyun-l/fifo
+#Todo: Add Dice Loss, Jaccard Loss And Tversky Loss function implementations
+
+
 import torch.nn.functional as F
 import torch.nn as nn
 from torch.autograd import Variable
