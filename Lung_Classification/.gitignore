@@ -1,0 +1,18 @@
+import os
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+import numpy as np
+Lr=LinearRegression()
+X=[41,45,54,64,68,77,82,95]
+X=np.asarray(X)
+X=X.reshape(-1,1)
+y=[20,21,23,24,24,25,27,30]
+Lr.fit(X, y)
+pred_input=np.array([60,80])
+#pred_input=pred_input.reshape(-1,1)
+print(pred_input[0].shape)
+for i in range(2):
+    input=pred_input[i]
+    input=input.reshape(-1,1)
+    pred=Lr.predict(input)
+    print(pred)
