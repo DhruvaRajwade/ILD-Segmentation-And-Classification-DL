@@ -61,5 +61,5 @@ mean, std = mean_std(image_data_loader)
 print("mean and std: \n", mean, std)
 
 #Now, images can be normalized if required, using:
-#transforms.Normalize(( mean,), (std,))]) (Code Valid For single channelled images)
+#transforms.Normalize(( mean,), (std,))]) (Code Valid For single channel images)
    
