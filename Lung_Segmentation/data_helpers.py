@@ -23,10 +23,30 @@ class NumpyDataset(Dataset):
             image = self.transform(image)
             label = self.transform(label)
         return (image, label)
+    
+    
+#Function to convert numpy inputs to a torch dataset
+    
+def numpy_to_dataset(images, labels, batch_size=None, shuffle=False, transform=None):
+    # Convert numpy arrays to PyTorch tensors
+    images = torch.from_numpy(images).float()
+    labels = torch.from_numpy(labels).long()
 
-#Example Code For Converting a Numpy image array with images and labels of shape [num_images,h,w] to a torch Dataset
-#      Labels are set to torch.long() and images to torch.float()
-with np.load('images_path', allow_pickle= True) as data:
+    # Create dataset from tensors
+    dataset = Dataset(images, labels, transform)
+
+    if batch_size is not None:
+        # Create dataloader from dataset
+        dataloader = DataLoader(dataset, batch_size=batch_size, shuffle=shuffle)
+        return dataset, dataloader
+    else:
+        return dataset    
+    
+#Example Code For Converting a Numpy image array with images and labels of shape [num_images,h,w] to a torch Dataset manually
+#Labels are set to torch.long() and images to torch.float()
+
+
+"""with np.load('images_path', allow_pickle= True) as data:
     X = data['arr_0'][0:]
 with np.load('labels_path', allow_pickle= True) as data:
     Y = data['arr_0'][0:]
@@ -41,4 +61,4 @@ torch.save(torch_dataset,'save_path')
 
 #Load a saved dataset and serialize it as a torch_dataloader
 my_data=torch.load('save_path')
-my_dataloader= DataLoader(my_data, batch_size=batch_size, shuffle=True)
+my_dataloader= DataLoader(my_data, batch_size=batch_size, shuffle=True)"""
