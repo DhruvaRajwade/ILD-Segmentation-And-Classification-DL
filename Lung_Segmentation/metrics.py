@@ -27,7 +27,7 @@ def compute_accuracy(predicted, groundtruth):
 
 
 class SegmentationMetrics(object):
-    r"""Calculate common metrics in semantic segmentation to evalueate model preformance.
+    """Calculate common metrics in semantic segmentation to evalueate model preformance.
     Supported metrics: Pixel accuracy, Dice Coeff, precision score and recall score.
 
     Pixel accuracy measures how many pixels in a image are predicted correctly.
