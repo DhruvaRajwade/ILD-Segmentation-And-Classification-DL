@@ -6,8 +6,8 @@ import matplotlib.pyplot as plt
 # Define A test_dataloader using the data_helpers.py csv_file
 
 # Define Model, and load Saved Weights
-
-model= model()
+#Some previous steps to follow
+"""model= model()
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 if torch.cuda.device_count() > 1:
@@ -16,55 +16,79 @@ if torch.cuda.device_count() > 1:
 #model = nn.DataParallel(model)  ##Even if you do not use >1 GPUs for evaluation, uncomment if you used >1 GPUs for training
 model.load_state_dict(torch.load('best_model.pth'))   
 model.to(device)
-optimizer = torch.optim.Adam(model.parameters(), lr=1e-6)
+optimizer = torch.optim.Adam(model.parameters(), lr=1e-6)"""
 
 
-predictions = []
-ious=[]
-dices=[]
-accs=[]
+def evaluate_model(model, dataloader, device, save_predictions=False, save_path=None):
+'''
+This function evaluates the trained model on the given dataloader and returns the mean IoU, mean Dice coefficient, and mean accuracy.
+rgs:
+- model: Trained PyTorch model
+- dataloader: PyTorch DataLoader containing the evaluation data
+- device: Device to run the evaluation on (GPU or CPU)
+- save_predictions: Boolean indicating whether to save the predicted masks
+- save_path: Path to save the predicted masks (required if save_predictions is True)
 
+Returns:
+- mean_iou: Mean Intersection over Union (IoU) score
+- mean_dice: Mean Dice coefficient score
+- mean_acc: Mean accuracy score
+- predictions: Numpy array containing the predicted masks
+'''
 
-for inputs, labels in train_dataloader:
-    # Move data to the device (GPU or CPU)
-    inputs = inputs.to(device)
-    # Forward pass
+# Set the model to evaluation mode
+    model.eval()
 
-    output_mask = model(inputs)
+    # Initialize lists for storing metrics and predictions
+    predictions = []
+    ious = []
+    dices = []
+    accs = []
 
-    # Get the predicted mask
-    _, predicted_mask = torch.max(output_mask, 1)
-    predicted_mask = predicted_mask.squeeze(1)
+    # Iterate over the dataloader
+    for inputs, labels in dataloader:
+        # Move data to the device
+        inputs = inputs.to(device)
+        labels = labels.to(device)
 
-    # Convert the predicted mask to a numpy array
-    predicted_mask = predicted_mask.to('cpu').numpy()
+        with torch.no_grad():
+            # Forward pass
+            output_mask = model(inputs)
 
-    # Convert the labels to a numpy array
-    labels = labels.to('cpu').numpy()
+            # Get the predicted mask
+            _, predicted_mask = torch.max(output_mask, 1)
+            predicted_mask = predicted_mask.squeeze(1)
 
-    # Calculate the IoU
-    iou = compute_iou(predicted_mask, labels)
+            # Convert the predicted mask to a numpy array
+            predicted_mask = predicted_mask.to('cpu').numpy()
 
-    # Calculate the Dice coefficient
-    dice = compute_dice(predicted_mask, labels)
+            # Convert the labels to a numpy array
+            labels = labels.to('cpu').numpy()
 
-    # Calculate the accuracy
-    accuracy = compute_accuracy(predicted_mask, labels)
+            # Calculate the IoU
+            iou = compute_iou(predicted_mask, labels)
 
-    ious.append(iou)
-    dices.append(dice)
-    accs.append(accuracy)
+            # Calculate the Dice coefficient
+            dice = compute_dice(predicted_mask, labels)
 
-    predictions.append(predicted_mask)
+            # Calculate the accuracy
+            accuracy = compute_accuracy(predicted_mask, labels)
 
-# Print the mean IoU, Dice coefficient, and accuracy
-print("Mean IoU: {:.4f}".format(np.mean(ious)))
-print("Mean Dice: {:.4f}".format(np.mean(dices)))
-print("Mean Accuracy: {:.4f}".format(np.mean(accs)))
+            ious.append(iou)
+            dices.append(dice)
+            accs.append(accuracy)
 
+            predictions.append(predicted_mask)
 
-#Save Model Prediction Images For Visualization And Analysis
-predictions=np.asarray(predictions)
-predictions.shape
-predictions=np.squeeze(predictions, axis=1)
-np.save('predictions_path', predictions)
+    # Calculate mean metrics
+    mean_iou = np.mean(ious)
+    mean_dice = np.mean(dices)
+    mean_acc = np.mean(accs)
+
+    if save_predictions:
+        # Save predictions to file
+        predictions = np.asarray(predictions)
+        predictions = np.squeeze(predictions, axis=1)
+        np.save(save_path, predictions)
+
+    return mean_iou, mean_dice, mean_acc, predictions
