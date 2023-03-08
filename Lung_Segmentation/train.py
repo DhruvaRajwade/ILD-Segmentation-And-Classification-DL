@@ -39,7 +39,7 @@ counter = 0
 model.train()
 
 # Initialize CSV file for storing results
-csv_file = open('/kaggle/working/results.csv', 'w', newline='')
+csv_file = open('PATH', 'w', newline='')
 csv_writer = csv.writer(csv_file)
 csv_writer.writerow(['Epoch', 'Train Loss', 'Val Loss'])
 
