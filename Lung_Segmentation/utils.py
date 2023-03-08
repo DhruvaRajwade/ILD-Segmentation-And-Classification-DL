@@ -1,3 +1,20 @@
+###Code To One Hot Encode Labels
+
+import torch
+
+def one_hot_encode(labels, num_classes):
+    # Reshape the labels to (batch_size, height, width)
+    labels = labels.reshape(labels.size(0), labels.size(2), labels.size(3))
+    
+    # Create a tensor of shape (batch_size, num_classes, height, width) filled with zeros
+    one_hot = torch.zeros(labels.size(0), num_classes, labels.size(1), labels.size(2))
+    
+    # Use torch.scatter to set the appropriate indices to 1
+    index = torch.unsqueeze(labels, 1)
+    one_hot.scatter_(1, index, 1)
+    
+    return one_hot
+
 ### Code for Bitwise Segmentation Of Input Images with reference to Predicted Lung Masks
 # (Basically Lung Extraction :D )
 from torch.utils.data import DataLoader
