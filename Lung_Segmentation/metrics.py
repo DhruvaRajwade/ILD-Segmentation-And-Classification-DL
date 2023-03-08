@@ -213,23 +213,23 @@ label_np = label_images.squeeze()
 cm = confusion_matrix(label_np.flatten(), predicted_np.flatten())
 
 # print the confusion matrix
-print(cm)
+#print(cm)
 
 # calculate classification report
 target_names = ['Class {}'.format(i) for i in range(9)]
-print(classification_report(label_np.flatten(), predicted_np.flatten(), target_names=target_names))
+#print(classification_report(label_np.flatten(), predicted_np.flatten(), target_names=target_names))
 
 # calculate overall accuracy
 overall_acc = np.trace(cm) / float(np.sum(cm))
-print("Overall Accuracy:", overall_acc)
+#print("Overall Accuracy:", overall_acc)
 
 # calculate class-wise accuracy
 class_acc = np.diag(cm) / cm.sum(axis=1)
-print("Class-wise Accuracy:", class_acc)
+#print("Class-wise Accuracy:", class_acc)
 
 # calculate F1 score
 f1_score = classification_report(label_np.flatten(), predicted_np.flatten(), target_names=target_names, output_dict=True)
-print("F1 Score:", f1_score)
+#print("F1 Score:", f1_score)
 
 # calculate sensitivity and specificity
 tp = np.diag(cm)
@@ -238,8 +238,8 @@ fn = cm.sum(axis=1) - tp
 tn = cm.sum() - (tp + fp + fn)
 sensitivity = tp / (tp + fn)
 specificity = tn / (tn + fp)
-print("Sensitivity:", sensitivity)
-print("Specificity:", specificity)
+#print("Sensitivity:", sensitivity)
+#print("Specificity:", specificity)
 
 # calculate ROC curve and AUC for each class
 fpr = dict()
@@ -260,7 +260,7 @@ label_np_flat = label_np.flatten()
 cm = confusion_matrix(label_np_flat, predicted_np_flat)
 
 # print the confusion matrix
-print(cm)
+#print(cm)
 
 from sklearn.metrics import confusion_matrix, accuracy_score, f1_score, recall_score, precision_score, roc_curve, auc
 accuracy = accuracy_score(label_np_flat, predicted_np_flat)
@@ -275,10 +275,10 @@ fpr, tpr, thresholds = roc_curve(label_np_flat, predicted_np_flat)
 auc_score = auc(fpr, tpr)
 
 # print the performance metrics
-print("Accuracy: {:.4f}".format(accuracy))
+#print("Accuracy: {:.4f}".format(accuracy))
 #print("F1 Score: {:.4f}".format(f1))
-print("Sensitivity: {:.4f}".format(sensitivity))
-print("Specificity: {:.4f}".format(specificity))
-print("Recall: {:.4f}".format(recall))
-print("Precision: {:.4f}".format(precision))
-print("AUC: {:.4f}".format(auc_score))
+#print("Sensitivity: {:.4f}".format(sensitivity))
+#print("Specificity: {:.4f}".format(specificity))
+#print("Recall: {:.4f}".format(recall))
+#print("Precision: {:.4f}".format(precision))
+#print("AUC: {:.4f}".format(auc_score))
