@@ -31,6 +31,24 @@ class MyDataset(data.Dataset):
 
 def get_data_loaders(images_path, labels_path, batch_size, train_split, val_split, img_dim):
 
+"""
+
+Args:
+
+images_path (str): The file path to the .npy file containing the images data
+
+labels_path (str): The file path to the .npy file containing the labels data
+
+batch_size (int): The batch size for the data loader
+
+train_split (float): The percentage of the data to use for the training set, expressed as a float between 0 and 1
+
+val_split (float): The percentage of the data to use for the validation set, expressed as a float between 0 and 1
+
+img_dim (int): The target dimension of the image after resizing
+
+
+"""
 
 
     # Load the images and labels
@@ -73,19 +91,3 @@ def get_data_loaders(images_path, labels_path, batch_size, train_split, val_spli
     return train_loader, val_loader, test_loader
 
 
-"""
-Args:
-images_path (str): The file path to the .npy file containing the images data
-
-labels_path (str): The file path to the .npy file containing the labels data
-
-batch_size (int): The batch size for the data loader
-
-train_split (float): The percentage of the data to use for the training set, expressed as a float between 0 and 1
-
-val_split (float): The percentage of the data to use for the validation set, expressed as a float between 0 and 1
-
-img_dim (int): The target dimension of the image after resizing
-
-
-"""
