@@ -11,6 +11,22 @@ from data_helpers import *
 
 
 def evaluate(net, test_loader, device, print_report=True, print_auc=True, print_confusion_matrix=True):
+"""
+Args:
+
+net: PyTorch model class.
+
+test_loader: PyTorch DataLoader class.
+
+device: PyTorch device class
+
+print_report (optional): Boolean flag, with the option to print metrics like precision, recall, accuracy and F1 score
+
+print_auc (optional): Boolean flag, with the option to print the ROC curve
+
+print_confusion_matrix (optional): Boolean flag, with the option to print the Confusion Matrix
+
+"""
     net.eval()  # Set the network to evaluation mode
 
     # Initialize variables for accuracy and predictions
