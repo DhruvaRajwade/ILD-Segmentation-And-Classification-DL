@@ -19,6 +19,12 @@ This Repository contains code of our work on Segmenting Lung CT Images and class
 	7. m_resunet.py: Contains the code for building the ResUNet++ architecture.
 	8. mertrics.py: Contains the code for dice coefficient metric and dice coefficient loss. 
 
+
+###Install Requirements Using the below code
+```python
+pip install -r requiremetns.txt
+```
+
 ## Convert DICOM images to Jpeg images and numpy arrays using the dicom_utils.py file.
 
  ```python
