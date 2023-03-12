@@ -22,7 +22,7 @@ This Repository contains code of our work on Segmenting Lung CT Images and class
 
 ###Install Requirements Using the below code
 ```python
-pip install -r requiremetns.txt
+pip install -r requirements.txt
 ```
 
 ## Convert DICOM images to Jpeg images and numpy arrays using the dicom_utils.py file.
