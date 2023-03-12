@@ -3,6 +3,10 @@ ILD_Segmentation_Classification
 
 This Repository contains code of our work on Segmenting Lung CT Images and classifying Interstitial Lung Diseases Using Deep Learning, submitted to the Respirology journal.
 
+## Folders:
+	data: Contains the set of three dataset as mentioned.
+	files: Contains the csv file and weight file generated during training.
+	new_data: Contains two subfolder `images` and `masks`, they contains the augmented images and mask
 
 ## Files:
 	1. process_image.py: Augment the images and mask for the training dataset.
