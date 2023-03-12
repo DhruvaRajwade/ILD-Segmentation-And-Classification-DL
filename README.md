@@ -20,10 +20,12 @@ This Repository contains code of our work on Segmenting Lung CT Images and class
 
 ## Convert DICOM images to Jpeg images and numpy arrays using the dicom_utils.py file.
         
-	 ```get_names(path)
+	 ```python
+	 get_names(path)
 	 for name in names:
      	     final_image = convert_dcm_jpg(cdir, name)
-     	     final_image.save(out_dir + '/' + name + '.jpg') ```
+     	     final_image.save(out_dir + '/' + name + '.jpg')
+	     ```
 
 --------
 
