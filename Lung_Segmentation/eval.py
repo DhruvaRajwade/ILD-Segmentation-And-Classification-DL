@@ -14,27 +14,27 @@ if torch.cuda.device_count() > 1:
     print("Let's use", torch.cuda.device_count(), "GPUs!")
 # Uncomment the below line if the model was trained using the DataParallel Strategy [The state_dict keys are stored with the prefix module (eg; module.conv.conv0..., and loading the saved model will prove unsuccessful] )
 #model = nn.DataParallel(model)  ##Even if you do not use >1 GPUs for evaluation, uncomment if you used >1 GPUs for training
-model.load_state_dict(torch.load('best_model.pth'))   
+model.load_state_dict(torch.load('best_model.pth'))
 model.to(device)
 optimizer = torch.optim.Adam(model.parameters(), lr=1e-6)"""
 
 
 def evaluate_model(model, dataloader, device, save_predictions=False, save_path=None):
-'''
-This function evaluates the trained model on the given dataloader and returns the mean IoU, mean Dice coefficient, and mean accuracy.
-rgs:
-- model: Trained PyTorch model
-- dataloader: PyTorch DataLoader containing the evaluation data
-- device: Device to run the evaluation on (GPU or CPU)
-- save_predictions: Boolean indicating whether to save the predicted masks
-- save_path: Path to save the predicted masks (required if save_predictions is True)
+    '''
+    This function evaluates the trained model on the given dataloader and returns the mean IoU, mean Dice coefficient, and mean accuracy.
+    rgs:
+    - model: Trained PyTorch model
+    - dataloader: PyTorch DataLoader containing the evaluation data
+    - device: Device to run the evaluation on (GPU or CPU)
+    - save_predictions: Boolean indicating whether to save the predicted masks
+    - save_path: Path to save the predicted masks (required if save_predictions is True)
 
-Returns:
-- mean_iou: Mean Intersection over Union (IoU) score
-- mean_dice: Mean Dice coefficient score
-- mean_acc: Mean accuracy score
-- predictions: Numpy array containing the predicted masks
-'''
+    Returns:
+    - mean_iou: Mean Intersection over Union (IoU) score
+    - mean_dice: Mean Dice coefficient score
+    - mean_acc: Mean accuracy score
+    - predictions: Numpy array containing the predicted masks
+    '''
 
 # Set the model to evaluation mode
     model.eval()

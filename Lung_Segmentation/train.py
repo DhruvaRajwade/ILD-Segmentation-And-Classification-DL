@@ -8,7 +8,7 @@ import csv
 from tqdm import tqdm
 
 def train(model, device, train_dataloader, val_dataloader, epochs, criterion, optimizer, loss_fn, lr_scheduler=None, lr_rate=None, save_path=None, patience=10):
-"""Args:
+    """Args:
     model (nn.Module): The neural network model to train.
     device (torch.device): The device to train the model on (e.g. CPU or GPU).
     train_dataloader (DataLoader): The dataloader for the training set.
@@ -18,10 +18,11 @@ def train(model, device, train_dataloader, val_dataloader, epochs, criterion, op
     epochs (int): The number of epochs to train for.
     lr_scheduler (torch.optim.lr_scheduler._LRScheduler, optional): The learning rate scheduler to use (default: None).
     lr_rate (float, optional): The learning rate to use (default: None).
-    save_path (str, optional): The path to save the trained model to (default: None).    """
+    save_path (str, optional): The path to save the trained model to (default: None).
+     """
     # Added distributed GPU training
     if torch.cuda.device_count() > 1:
-    print("Let's use", torch.cuda.device_count(), "GPUs!")
+        print("Let's use", torch.cuda.device_count(), "GPUs!")
     model = nn.DataParallel(model)
 
     model.to(device)
@@ -125,4 +126,3 @@ def train(model, device, train_dataloader, val_dataloader, epochs, criterion, op
 
     if csv_file is not None:
         csv_file.close()
-    
