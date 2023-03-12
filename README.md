@@ -19,13 +19,13 @@ This Repository contains code of our work on Segmenting Lung CT Images and class
 	8. mertrics.py: Contains the code for dice coefficient metric and dice coefficient loss. 
 
 ## Convert DICOM images to Jpeg images and numpy arrays using the dicom_utils.py file.
-        
-	 ```python
-	 get_names(path)
-	 for name in names:
-     	     final_image = convert_dcm_jpg(cdir, name)
-     	     final_image.save(out_dir + '/' + name + '.jpg')
-	     ```
+
+ ```python
+ get_names(path)
+ for name in names:
+     final_image = convert_dcm_jpg(cdir, name)
+     final_image.save(out_dir + '/' + name + '.jpg')
+     ```
 
 --------
 
