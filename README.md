@@ -48,7 +48,7 @@ validation: 256x256 reshaped
 | Attn_R2_UNET | 10         | 0.8523 | **0.9263** | 0.9913   | [Link text Here](https://link-url-here.org) |  
 |              |            |        |        |          |                                             |  
 
-#### Segmentation Results on Pascal VOC2012 (DeepLabv3Plus-MobileNet)
+#### Segmentation Results on Geneva-HRCT Dataset (All Networks)
 
 <div>
 <img src="Figures/prediction1.png"   width="100%">
