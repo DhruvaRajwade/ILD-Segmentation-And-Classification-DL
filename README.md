@@ -37,7 +37,7 @@ validation: 256x256 reshaped
 |--------------|------------|--------|--------|----------|---------------------------------------------|
 | UNET         | 10         | 0.8280 | 0.8604 | 0.9848   | [Link text Here](https://link-url-here.org) |   
 | Attn_UNET    | 10         | 0.8394 | 0.8708 | 0.9901   | [Link text Here](https://link-url-here.org) |   
-| R2_UNET      | 10         | 0.9191 | 0.8811 | 0.9934   | [Link text Here](https://link-url-here.org) |   
+| R2_UNET      | 10         | **0.9191** | 0.8811 | 0.9934   | [Link text Here](https://link-url-here.org) |   
 | Attn_R2_UNET | 10         | 0.8523 | 0.9263 | 0.9913   | [Link text Here](https://link-url-here.org) |  
 |              |            |        |        |          |                                             |  
 
