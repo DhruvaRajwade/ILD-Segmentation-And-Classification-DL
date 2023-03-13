@@ -90,7 +90,7 @@ validation: 256x256 reshaped
 
 <p float="left">
   <img src="/Figures/HP_IPF_ROC.png"  width="40%"/>
-  <img src="/Figures/HP_IPF_acc.png"  width="40%"/> 
+  <img src="/Figures/HP_IPF_acc.png"  width="60%"/> 
 
 </p>
 
