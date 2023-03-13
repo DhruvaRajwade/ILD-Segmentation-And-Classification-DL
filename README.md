@@ -85,16 +85,14 @@ validation: 256x256 reshaped
 | macro avg    | 0.94      | 0.95   | 0.95     | 149     |
 | weighted_avg | 0.95      | 0.95   | 0.95     | 149     |
 
-# AUC ROC Curve
+# Visualizations
 
-<div>
-<img src="Figures/HP_IPF_ROC.png"   width="40%">          
-</div>
 
-<div>
-<img src="Figures/HP_IPF_acc.png"   width="40%">
-</div>
+<p float="left">
+  <img src="/Figures/HP_IPF_ROC.png"  width="40%"/>
+  <img src="/Figures/HP_IPF_acc.png" width="40" /> 
 
+</p>
 
 --------
 
