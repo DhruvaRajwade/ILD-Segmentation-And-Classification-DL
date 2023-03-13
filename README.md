@@ -53,10 +53,10 @@ validation: 256x256 reshaped
 
 | Model        | Batch_Size | mIOU   | DSC    | Accuracy | Google Drive                                |  
 |--------------|------------|--------|--------|----------|---------------------------------------------|
-| UNET         | 10         | 0.8280 | 0.8604 | 0.9848   | [Link text Here](https://link-url-here.org) |   
-| Attn_UNET    | 10         | 0.8394 | 0.8708 | 0.9901   | [Link text Here](https://link-url-here.org) |   
-| R2_UNET      | 10         | **0.9191** | 0.8811 |**0.9934**   | [Link text Here](https://link-url-here.org) |   
-| Attn_R2_UNET | 10         | 0.8523 | **0.9263** | 0.9913   | [Link text Here](https://link-url-here.org) |  
+| UNET         | 10         | 0.8280 | 0.8604 | 0.9848   | [Download](https://drive.google.com/file/d/1mrTg95Bm0SSlLEzZphUu3wYFkYE7G-vD/view?ts=640f3ed6) |   
+| Attn_UNET    | 10         | 0.8394 | 0.8708 | 0.9901   | [Download](https://drive.google.com/file/d/1ZkiMf9-5Z861D2xdqpABC3-2li9mCjPw/view?usp=sharing_eil_m&ts=640f3ed6) |   
+| R2_UNET      | 10         | **0.9191** | 0.8811 |**0.9934**   | [Download](https://drive.google.com/file/d/1AX8ABi2fGhylJFTLaKoWArSZXG_O35VS/view?usp=sharing_eil_m&ts=640f3ed6) |   
+| Attn_R2_UNET | 10         | 0.8523 | **0.9263** | 0.9913   | [Download](https://drive.google.com/file/d/1ZTFNYRzSsz8XRPVyZ27lRU_zu5VwSaKZ/view?usp=sharing_eil_m&ts=640f3ed6) |  
 |              |            |        |        |          |                                             |  
 
 ### 2. Segmentation Results on Geneva-HRCT Dataset (All Networks)
