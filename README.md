@@ -31,7 +31,7 @@ This Repository contains code of our work on Segmenting Lung CT Images and class
 	
 
 
-### Install Requirements Using the below code
+## Install Requirements Using the below code
 ```python
 pip install -r requirements.txt
 ```
@@ -44,6 +44,12 @@ pip install -r requirements.txt
      final_image = convert_dcm_jpg(cdir, name)
      final_image.save(out_dir + '/' + name + '.jpg')
   ```
+
+## Dataset Description And Availability
+
+We used a multimedia collection of cases with interstitial lung diseases (ILDs) built at the University Hospitals of Geneva (HUG). The dataset contains high-resolution computed tomography (HRCT) image series with three-dimensional annotated regions of pathological lung tissue along with clinical parameters from patients with pathologically proven diagnoses of ILDs. The library contains 128 patients affected with one of the 13 histological diagnoses of ILDs, 108 image series with more than 41liters of annotated lung tissue patterns as well as a comprehensive set of 99 clinical parameters related to ILDs. The database is available for research on request and after signature of a [license agreement](https://medgift.hevs.ch/wordpress/wp-content/uploads/2023/02/ILD_DB_EndUserAgreement_2023.pdf). A comprehensive description of the dataset can be found in [this](https://www.sciencedirect.com/science/article/pii/S0895611111001017?via%3Dihub) paper. For detailed instructions please visit [this](https://medgift.hevs.ch/wordpress/databases/ild-database/) webpage.
+
+
 ## Lung Segmentation Results For Models implemented
 
 ### 1. Performance on Geneva HRCT Dataset (12 classes, 512 x 512)
