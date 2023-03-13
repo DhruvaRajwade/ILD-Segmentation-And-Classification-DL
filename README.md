@@ -31,7 +31,7 @@ This Repository contains code of our work on Segmenting Lung CT Images and class
 	
 
 
-###Install Requirements Using the below code
+### Install Requirements Using the below code
 ```python
 pip install -r requirements.txt
 ```
