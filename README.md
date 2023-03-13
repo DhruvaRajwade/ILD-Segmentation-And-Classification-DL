@@ -82,13 +82,13 @@ validation: 256x256 reshaped
 | HP           | 0.97      | 0.93   | 0.95     | 82      |
 | IPF          | 0.92      | 0.97   | 0.94     | 67      |
 | Accuracy     |           |        | 0.95     | 149     |
-| macro avg    |           |        |          | 149     |
-| weighted_avg |           |        |          | 149     |
+| macro avg    | 0.94      | 0.95   | 0.95     | 149     |
+| weighted_avg | 0.95      | 0.95   | 0.95     | 149     |
 
 # AUC ROC Curve
 
 <div>
-<img src="Figures/HP_IPF_ROC.png"   width="100%">
+<img src="Figures/HP_IPF_ROC.png"   width="40%">
 </div>
 
 
