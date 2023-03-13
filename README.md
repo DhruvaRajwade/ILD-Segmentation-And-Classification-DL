@@ -128,3 +128,5 @@ validation: 256x256 reshaped
 Todo
 
 ## Todo
+Add Example Notebooks
+Add Variational Autoencoders
