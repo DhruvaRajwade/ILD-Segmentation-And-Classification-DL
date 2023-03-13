@@ -88,10 +88,12 @@ validation: 256x256 reshaped
 # AUC ROC Curve
 
 <div>
-<img src="Figures/HP_IPF_ROC.png"   width="40%">
+<img src="Figures/HP_IPF_ROC.png"   width="40%">          
 </div>
 
-
+<div>
+<img src="Figures/HP_IPF_acc.png"   width="40%">
+</div>
 
 
 --------
