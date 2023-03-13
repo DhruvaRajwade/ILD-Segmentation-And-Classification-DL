@@ -6,18 +6,29 @@ This Repository contains code of our work on Segmenting Lung CT Images and class
 ## Folders:
 	Lung_Classification: Contains code for lung disease classification.
 	Lung_Segmentatopn: Contains code for lung segmentation.
-	Figures: Plots generated fr the paper
+	Figures: Plots generated for the paper
 	example_notebooks: Contains example notebooks for both above tasks, which can be downloaded and run with user-data.
 
 ## Files:
-	1. process_image.py: Augment the images and mask for the training dataset.
-	2. data_generator.py: Dataset generator for the keras.
-	3. infer.py: Run your model on test dataset and all the result are saved in the result` folder. The images are in the sequence: Image,Ground Truth Mask, Predicted Mask.
-	4. run.py: Train the unet.
-	5. unet.py: Contains the code for building the UNet architecture.
-	6. resunet.py: Contains the code for building the ResUNet architecture.
-	7. m_resunet.py: Contains the code for building the ResUNet++ architecture.
-	8. mertrics.py: Contains the code for dice coefficient metric and dice coefficient loss. 
+	 ┣ Root
+	 ┣ Lung_Classification
+	 ┃ ┣ data_helpers.py      # Preprocessing and loading data for model input and evaluation 					
+	 ┃ ┣ dicom_utils.py       # Helper script to convert dicom images to numpy arrays or pngs
+	 ┃ ┣ eval.py              # Helper script for evaluating model on unseen data,and visualizing metrics and plots like ROC curve
+	 ┃ ┣ models.py            # Classifier model for the classification task, plus an Autoencoder (**Under development**)
+	 ┃ ┗ train.py             # Helper script for training model on data processed using data_helpers.py,and saving the model
+	 ┣ Lung_Segmentation
+	 ┃ ┣ data_helpers.py      # Preprocessing and loading data for model input and evaluation 
+	 ┃ ┣ eval.py              # Helper script for evaluating model on unseen data
+	 ┃ ┣ loss.py              # Loss functions used in the model training 
+	 ┃ ┣ metrics.py           # Collection of segmentation metrics including mIOU, Dice, Tversky loss and Focal loss.
+	 ┃ ┣ models.py            # Segmentation models used in the paper (**Under development: Hyper-parameter tuning using RayTune**)
+	 ┃ ┣ train.py             # Helper script for training model on data processed using data_helpers.py,and saving the model (Segmentation)
+	 ┃ ┣ utils.py             # Miscillenous functions used as utility functions
+	 ┃ ┗ visualize_helpers.py # Script to visualize model predictions
+	 ┣ README.md
+	 ┗ requirements.txt
+	
 
 
 ###Install Requirements Using the below code
