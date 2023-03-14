@@ -65,7 +65,7 @@ validation: 256x256 reshaped
 | Attn_R2_UNET | 10         | 0.8523 | **0.9263** | 0.9913   | [Download](https://drive.google.com/file/d/1ZTFNYRzSsz8XRPVyZ27lRU_zu5VwSaKZ/view?usp=sharing_eil_m&ts=640f3ed6) |  
 |              |            |        |        |          |                                             |  
 
-### 2. Segmentation Results on Geneva-HRCT Dataset (All Networks)
+### 2. Segmentation Results on Geneva-HRCT Dataset (All Models)
 
 <div>
 <img src="Figures/prediction1.png"   width="100%">
@@ -78,6 +78,22 @@ validation: 256x256 reshaped
 <div>
 <img src="Figures/prediction3.png"   width="100%">
 </div>
+
+# Model Validation Loss vs Epochs plots
+
+<p float="left">
+  <img src="/Figures/unet_training.png"  width="40%"/>
+  <img src="/Figures/attn_training.png"  width="40%"/> 
+
+</p>
+
+<p float="left">
+  <img src="/Figures/attn_res_unet_training.png"  width="40%"/>
+  <img src="/Figures/R2_unet_training.png"  width="40%"/> 
+
+</p>
+
+
 
 ### 3. Disease Classification Results 
 
