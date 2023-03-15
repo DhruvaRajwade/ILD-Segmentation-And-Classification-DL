@@ -43,11 +43,12 @@ def train(model,train_loader, val_loader, num_epochs, optimizer, criterion, sche
     val_accs = []
 
     for epoch in range(num_epochs):
-        correct = 0
-        total = 0
+       
         running_loss = 0.0
         net.train()  # Set the network to training mode
         for i, data in tqdm(enumerate(train_loader, 0), total=len(train_loader)):
+            total=0
+            correct=0
 
             # Get the inputs and labels
             inputs, labels = data
