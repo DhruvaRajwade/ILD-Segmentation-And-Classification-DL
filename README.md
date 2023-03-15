@@ -24,7 +24,7 @@ This Repository contains code of our work on Segmenting Lung CT Images and class
 	 ┃ ┣ metrics.py           # Collection of segmentation metrics including mIOU, Dice, Tversky loss and Focal loss.
 	 ┃ ┣ models.py            # Segmentation models used in the paper (**Under development: Hyper-parameter tuning using RayTune**)
 	 ┃ ┣ train.py             # Helper script for training model on data processed using data_helpers.py,and saving the model (Segmentation)
-	 ┃ ┣ utils.py             # Miscillenous functions used as utility functions
+	 ┃ ┣ utils.py             # Miscellenous functions used as utility functions
 	 ┃ ┗ visualize_helpers.py # Script to visualize model predictions
 	 ┣ README.md
 	 ┗ requirements.txt
