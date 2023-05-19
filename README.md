@@ -1,7 +1,7 @@
 ILD-Segmentation-Classification
 ==============================
 
-This Repository contains code of our work on Segmenting Lung CT Images and classifying Interstitial Lung Diseases Using Deep Learning, submitted to the Imaging Systems And Technology journal.
+This Repository contains code of our work on Segmenting Lung CT Images and classifying Interstitial Lung Diseases Using Deep Learning, submitted to the [Imaging Systems And Technology journal](https://onlinelibrary.wiley.com/journal/10981098) .
 
 ## Folders:
 	Lung_Classification: Contains code for lung disease classification.
