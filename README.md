@@ -5,7 +5,7 @@ This Repository contains code of our work on Segmenting Lung CT Images and class
 
 ## Folders:
 	Lung_Classification: Contains code for lung disease classification.
-	Lung_Segmentatopn: Contains code for lung segmentation.
+	Lung_Segmentation: Contains code for lung segmentation.
 	Figures: Plots generated for the paper
 	example_notebooks: Contains example notebooks for both above tasks, which can be downloaded and run with user-data.
 
